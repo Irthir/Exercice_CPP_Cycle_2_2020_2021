@@ -14,6 +14,8 @@ public:
 
 	//Les fonctions membres de la classe
 	void DeplacePoint(float fX,float fY);
+	float Abscisse();
+	float Ordonnee();
 
 	//Assesseurs :
 	float const getX();

@@ -16,6 +16,23 @@ void CPoint::DeplacePoint(float fX, float fY)
 	this->m_fY += fY;
 }
 
+float CPoint::Abscisse()
+//BUT : Retourner la valeur en X d'un point.
+//ENTREE : Le-dit point.
+//SORTIE : La valeur en X du-dit point.
+{
+	return this->getX();
+}
+
+float CPoint::Ordonnee()
+//BUT : Retourner la valeur en Y d'un point.
+//ENTREE : Le-dit point.
+//SORTIE : La valeur en Y du-dit point.
+{
+	return this->getY();
+}
+
+
 //Les assesseurs :
 float const CPoint::getX()
 {
