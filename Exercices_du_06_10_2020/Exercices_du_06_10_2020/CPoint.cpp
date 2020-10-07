@@ -17,23 +17,35 @@ CPoint::CPoint()
 //Un autre constructeur possible :
 CPoint::CPoint(float fX, float fY)
 {
+	float const PI = 3.1415926;
 	this->m_fX = fX;
 	this->m_fY = fY;
 	this->m_fRho = (float)sqrt((double)fX * fX + (double)fY * fY);
-	if (fX > 0.001 || fX < -0.001) {
-		this->m_fTheta = atanf(fY / fX);
-	}
-	else
+	float fTheta;
+	if (this->m_fX == 0.0)
 	{
-		if (fY > 0)
+		if (this->m_fY < 0.0)
 		{
-			this->m_fTheta = 90;
+			fTheta = (3 * PI) / 2;
 		}
-		else
-		{
-			this->m_fTheta = -90;
+		else {
+			fTheta = PI / 2;
 		}
 	}
+	else if (this->m_fX < 0.0)
+	{
+		fTheta = atan(this->m_fY / this->m_fX) + PI;
+	}
+	else {
+		if (this->m_fY < 0.0)
+		{
+			fTheta = atan(this->m_fY / this->m_fX) + 2 * PI;
+		}
+		else {
+			fTheta = atan(this->m_fY / this->m_fX);
+		}
+	}
+	this->m_fTheta = fTheta;
 	nCompteur++;
 }
 
@@ -127,18 +139,29 @@ float const CPoint::Theta(CPoint &pCentre)
 	float fX = this->m_fX - pCentre.m_fX;
 	float fY = this->m_fY - pCentre.m_fY;
 	float fTheta;
-	if (fX > 0.001 || fX < -0.001) {
-		fTheta = atanf(fY/fX);
-	}
-	else
+
+
+	if (this->m_fX == 0.0)
 	{
-		if (fY > 0)
+		if (this->m_fY < 0.0)
 		{
-			fTheta = 0.5*PI;
+			fTheta = (3 * PI) / 2;
 		}
-		else
+		else {
+			fTheta = PI / 2;
+		}
+	}
+	else if (this->m_fX < 0.0)
+	{
+		fTheta = atan(this->m_fY / this->m_fX) + PI;
+	}
+	else {
+		if (this->m_fY < 0.0)
 		{
-			fTheta = -0.5*PI;
+			fTheta = atan(this->m_fY / this->m_fX) + 2 * PI;
+		}
+		else {
+			fTheta = atan(this->m_fY / this->m_fX);
 		}
 	}
 	return fTheta;
