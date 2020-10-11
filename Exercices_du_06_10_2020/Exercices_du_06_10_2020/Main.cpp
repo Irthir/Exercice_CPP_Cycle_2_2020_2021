@@ -3,13 +3,13 @@
 
 using namespace std;
 
-void AffichePoint(CPoint pPoint);
+// void AffichePoint(CPoint pPoint);
 
 int main()
 {
-	cout << "Nombre de poins actuels : " << CPoint::getCompteur() << "." << endl;
+	cout << "Nombre de points actuels : " << CPoint::getCompteur() << "." << endl;
 	CPoint pPoint;
-	cout << "Nombre de poins actuels : " <<CPoint::getCompteur() << "." << endl;
+	cout << "Nombre de points actuels : " << CPoint::getCompteur() << "." << endl;
 
 	//AffichePoint(pPoint);
 	cout << "Notre point a pour coordonnees Abscisse : " << pPoint.Abscisse() << " Ordonnee : " << pPoint.Ordonnee() << endl;
@@ -17,7 +17,7 @@ int main()
 	//AffichePoint(pPoint);
 	cout << "Notre point a pour coordonnees Abscisse : " << pPoint.Abscisse() << " Ordonnee : " << pPoint.Ordonnee() << endl;
 	CPoint pCentre(10, 15);
-	cout << "Nombre de poins actuels : " << CPoint::getCompteur() << "." << endl;
+	cout << "Nombre de points actuels : " << CPoint::getCompteur() << "." << endl;
 
 	cout << "Homothetie de notre point par rapport a un point en (10,15) de rapport 0,25." << endl;
 	pPoint.Homothetie(pCentre, 0.25f);
@@ -28,7 +28,7 @@ int main()
 
 	cout << "Notre point par rapport au centre en (10,15) a pour coordonnees polaires : Rho = " << pPoint.Rho(pCentre) << " Theta = " << pPoint.Theta(pCentre) << "." << endl;
 
-	cout << "Nombre de poins actuels : " << CPoint::getCompteur() << "." << endl;
+	cout << "Nombre de points actuels : " << CPoint::getCompteur() << "." << endl;
 
 	return 0;
 }

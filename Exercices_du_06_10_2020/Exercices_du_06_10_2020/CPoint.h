@@ -11,7 +11,7 @@ private:
 	float m_fRho;
 	float m_fTheta;
 
-	static int nCompteur;
+	static int m_nCompteur;
 
 public:
 	//Le Constructeur par défaut
@@ -31,7 +31,7 @@ public:
 	float const Rho(CPoint& pCentre);
 	float const Theta(CPoint& pCentre);
 
-	inline static int getCompteur() {return nCompteur;}
+	inline static int getCompteur() {return m_nCompteur;}
 
 	//Assesseurs :
 	float const getX();

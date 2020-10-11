@@ -2,7 +2,7 @@
 #include <math.h>
 #include <cmath>
 
-int CPoint::nCompteur=0;
+int CPoint::m_nCompteur=0;
 
 //Le constructeur par défaut :
 CPoint::CPoint()
@@ -11,7 +11,7 @@ CPoint::CPoint()
 	this->m_fY = 0;
 	this->m_fRho = 0;
 	this->m_fTheta = 0;
-	nCompteur++;
+	m_nCompteur++;
 }
 
 //Un autre constructeur possible :
@@ -32,27 +32,27 @@ CPoint::CPoint(float fX, float fY)
 			fTheta = PI / 2;
 		}
 	}
-	else if (this->m_fX < 0.0)
+	else if (fX < 0.0)
 	{
-		fTheta = atan(this->m_fY / this->m_fX) + PI;
+		fTheta = atan(fY / fX) + PI;
 	}
 	else {
-		if (this->m_fY < 0.0)
+		if (fY < 0.0)
 		{
-			fTheta = atan(this->m_fY / this->m_fX) + 2 * PI;
+			fTheta = atan(fY / fX); +2 * PI;
 		}
 		else {
-			fTheta = atan(this->m_fY / this->m_fX);
+			fTheta = atan(fY /  fX);
 		}
 	}
 	this->m_fTheta = fTheta;
-	nCompteur++;
+	m_nCompteur++;
 }
 
 //Le Destructeur :
 CPoint::~CPoint()
 {
-	nCompteur--;
+	m_nCompteur--;
 }
 
 void CPoint::DeplacePoint(float fX, float fY)
