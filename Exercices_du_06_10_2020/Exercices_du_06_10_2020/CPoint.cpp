@@ -1,4 +1,5 @@
 #include "CPoint.h"
+#include "CCercle.h" //Forward Declaration de CCercle.h (Post-Déclaration)
 #include <math.h>
 #include <cmath>
 
@@ -187,4 +188,9 @@ void CPoint::setX(float fX)
 void CPoint::setY(float fY)
 {
 	this->m_fY = fY;
+}
+
+bool CPoint::Coincide(CCercle &cCercle)
+{
+	return ((this->m_fX == cCercle.m_pCentre.m_fX) && (this->m_fY == cCercle.m_pCentre.m_fY));
 }

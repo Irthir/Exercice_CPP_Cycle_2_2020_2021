@@ -1,8 +1,10 @@
 #pragma once
+#ifndef CCERCLE_H
+#define CCERCLE_H
 #include "CPoint.h"
 
 class CCercle
-	//DEFINITION : Classe représentant un cercle.
+//DEFINITION : Classe représentant un cercle.
 {
 private:
 	//Membres de la classe
@@ -28,4 +30,8 @@ public:
 	inline void setCentre(CPoint pCentre) { this->m_pCentre = pCentre; }
 
 	inline static int getCompteur() { return m_nCompteur; }
+
+	//Fonction membre de la classe CPoint amie de la classe CCercle.
+	friend bool CPoint::Coincide(CCercle &cCercle);
 };
+#endif

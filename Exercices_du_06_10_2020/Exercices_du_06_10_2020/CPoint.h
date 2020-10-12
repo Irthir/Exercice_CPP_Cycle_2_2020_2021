@@ -1,5 +1,8 @@
 #pragma once
+#ifndef CPOINT_H
+#define CPOINT_H
 
+class CCercle; //Pré-déclaration de la classe cercle.
 class CPoint
 //DEFINITION : Classe représentant un point dans un espace en deux dimensions, possédant comme membres deux nombres en X et Y représentant sa position dans cet espace.
 {
@@ -31,6 +34,9 @@ public:
 	float const Rho(CPoint& pCentre);
 	float const Theta(CPoint& pCentre);
 
+	//Fonction membre de la classe point.
+	bool Coincide(CCercle& cCercle);
+
 	inline static int getCompteur() {return m_nCompteur;}
 
 	//Assesseurs :
@@ -40,3 +46,5 @@ public:
 	void setX(float fX);
 	void setY(float fY);
 };
+
+#endif // !CPOINT_H
