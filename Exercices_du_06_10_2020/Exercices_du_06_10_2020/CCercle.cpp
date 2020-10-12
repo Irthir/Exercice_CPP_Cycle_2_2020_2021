@@ -2,11 +2,9 @@
 
 int CCercle::m_nCompteur = 0;
 
-CCercle::CCercle(float fRayon, float fX, float fY)
+CCercle::CCercle(float fRayon, float fX, float fY):m_pCentre(fX,fY)
 {
 	this->m_fRayon = fRayon;
-	CPoint pCentre(fX, fY);
-	this->m_pCentre = pCentre;
 	m_nCompteur++;
 }
 
