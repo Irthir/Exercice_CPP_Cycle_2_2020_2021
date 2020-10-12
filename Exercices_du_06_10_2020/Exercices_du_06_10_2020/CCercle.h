@@ -33,5 +33,7 @@ public:
 
 	//Fonction membre de la classe CPoint amie de la classe CCercle.
 	friend bool CPoint::Coincide(CCercle &cCercle);
+
+	friend bool CoincideAmi(CCercle& cCercle, CPoint pPoint);
 };
 #endif

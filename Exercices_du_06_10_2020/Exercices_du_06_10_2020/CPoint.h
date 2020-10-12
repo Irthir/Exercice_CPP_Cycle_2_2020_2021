@@ -37,6 +37,8 @@ public:
 	//Fonction membre de la classe point.
 	bool Coincide(CCercle& cCercle);
 
+	friend bool CoincideAmi(CCercle &cCercle, CPoint pPoint);
+
 	inline static int getCompteur() {return m_nCompteur;}
 
 	//Assesseurs :
