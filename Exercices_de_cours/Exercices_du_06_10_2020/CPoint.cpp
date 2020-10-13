@@ -69,10 +69,37 @@ CPoint::~CPoint()
 	m_nCompteur--;
 }
 
+/*CPoint CPoint::operator+(CPoint const pPoint)
+{
+	CPoint pResult;
+	pResult.m_fX = this->m_fX + pPoint.m_fX;
+	pResult.m_fY = this->m_fY + pPoint.m_fY;
+	return pResult;
+}*/
+
 CPoint operator+(CPoint const& pPoing, CPoint const& pPoint)
 {
 	CPoint pResult(pPoing.m_fX + pPoint.m_fX, pPoing.m_fY + pPoint.m_fY);
 	return pResult;
+}
+
+/*CPoint* CPoint::operator+(const CPoint pt)
+{
+	this->m_fX = this->m_fX + pt.m_fX;
+	this->m_fY = this->m_fY + pt.m_fY;
+	return this;
+}*/
+
+CPoint CPoint::operator=(const CPoint& pt)
+{
+	std::cout << "Appelle de l'operateur =" << std::endl;
+	this->m_fX = pt.m_fX;
+	this->m_fY = pt.m_fY;
+	this->m_fRho = pt.m_fRho;
+	this->m_fTheta = pt.m_fTheta;
+	//this->m_strType = new char[100];
+	//strcpy_s(this->m_strType, 100, pt.m_strType;
+	return *this;
 }
 
 void CPoint::DeplacePoint(float fX, float fY)

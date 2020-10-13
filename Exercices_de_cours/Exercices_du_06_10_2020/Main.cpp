@@ -12,7 +12,7 @@ int main()
 	CPoint pPoint(point); //Equivalent de CPoint pPoint = point;
 
 	//La surcharge de l'opérateur +
-	point = point + pPoint + point + pPoint;
+	point = point + pPoint;// +point + pPoint;
 
 	cout << " X = " << point.getX() << " Y = " << point.getY() << endl;
 

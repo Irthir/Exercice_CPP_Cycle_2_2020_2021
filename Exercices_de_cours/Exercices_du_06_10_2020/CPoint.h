@@ -27,7 +27,15 @@ public:
 	~CPoint();
 
 	//La surcharge de l'opérateur +
-	friend CPoint operator+(CPoint const& pPoing,CPoint const& pPoint);
+	//Cas Fonction Membre.
+	//CPoint operator+(CPoint const pPoint);
+	//Cas passage par pointeur
+	//CPoint* CPoint::operator+(const CPoint pt);
+	//Cas Fonction Amie.
+	friend CPoint operator+(CPoint const& pPoing, CPoint const& pPoint);
+
+	//Surcharge = (assignation de CPoint)
+	CPoint operator=(const CPoint&);
 
 	//Les fonctions membres de la classe
 	void DeplacePoint(float fX,float fY);
