@@ -6,16 +6,15 @@ using namespace std;
 
 int main()
 {
-	/*
-	Dans la situation ou une fonction doit partager des membres privées de deux classes,
-	on fait une méthode d'une classe qui est amie d'une autre.
-	Ne pas oublier la post et la pré-déclaration de la deuxième classe dans la première afin d'éviter une redondance dans les déclarations.
-	*/
-
 	CPoint point(10, 12);
-	CCercle cercle(8.8, 10, 12);
+	
+	//Le constructeur par copie.
+	CPoint pPoint(point); //Equivalent de CPoint pPoint = point;
 
-	cout << point.Coincide(cercle) << endl;
+	//La surcharge de l'opérateur +
+	point = point + pPoint + point + pPoint;
+
+	cout << " X = " << point.getX() << " Y = " << point.getY() << endl;
 
 	return 0;
 }

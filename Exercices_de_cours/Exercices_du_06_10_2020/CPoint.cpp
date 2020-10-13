@@ -2,6 +2,7 @@
 #include "CCercle.h" //Forward Declaration de CCercle.h (Post-Déclaration)
 #include <math.h>
 #include <cmath>
+#include <iostream>
 
 int CPoint::m_nCompteur=0;
 
@@ -50,10 +51,28 @@ CPoint::CPoint(float fX, float fY)
 	m_nCompteur++;
 }
 
+CPoint::CPoint(CPoint& pt)
+{
+	std::cout << "Appelle du constructeur par copie" << std::endl;
+	this->m_fX = pt.m_fX;
+	this->m_fY = pt.m_fY;
+	this->m_fRho = pt.m_fRho;
+	this->m_fTheta = pt.m_fTheta;
+	//this->m_strType = new char[100];
+	//strcpy_s(this->m_strType, 100, pt.m_strType;
+	m_nCompteur++;
+}
+
 //Le Destructeur :
 CPoint::~CPoint()
 {
 	m_nCompteur--;
+}
+
+CPoint operator+(CPoint const& pPoing, CPoint const& pPoint)
+{
+	CPoint pResult(pPoing.m_fX + pPoint.m_fX, pPoing.m_fY + pPoint.m_fY);
+	return pResult;
 }
 
 void CPoint::DeplacePoint(float fX, float fY)

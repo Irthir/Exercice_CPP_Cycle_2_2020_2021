@@ -21,8 +21,13 @@ public:
 	CPoint();
 	//Un autre constructeur possible
 	CPoint(float fX, float fY);
+	//Le constructeur par copie
+	CPoint(CPoint&); //Dans un singleton si on met son prototype en privée et sa définition vide pour l'empêcher de l'utiliser.
 	//Le Destructeur
 	~CPoint();
+
+	//La surcharge de l'opérateur +
+	friend CPoint operator+(CPoint const& pPoing,CPoint const& pPoint);
 
 	//Les fonctions membres de la classe
 	void DeplacePoint(float fX,float fY);
